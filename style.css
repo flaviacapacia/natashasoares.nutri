@@ -130,12 +130,15 @@ a {
 
 .hero-image {
   width: 100%;
-  aspect-ratio: 4 / 3;
-  object-fit: cover;
-  object-position: center top;
-  border-radius: 14px;
-  border: 1px solid #ffd8b1;
-  box-shadow: 0 10px 22px rgba(184, 90, 28, 0.15);
+  max-height: 280px;
+  object-fit: contain;
+  object-position: center;
+  background: transparent;
+  border-radius: 0;
+  border: 0;
+  box-shadow: none;
+  margin: 0;
+  display: block;
 }
 
 .hero-text h1 {
@@ -231,7 +234,7 @@ a {
   aspect-ratio: 9 / 16;
   object-fit: contain;
   max-height: 300px;
-  background: #fff3e6;
+  background: transparent;
 }
 
 .card h3,
@@ -403,7 +406,7 @@ a {
   aspect-ratio: 9 / 16;
   object-fit: contain;
   max-height: 300px;
-  background: #fff3e6;
+  background: transparent;
   border-radius: 10px;
   margin-bottom: 12px;
 }
@@ -455,7 +458,7 @@ a {
   font-size: 0.9rem;
 }
 
-@media (max-width: 860px) {
+@media (max-width: 700px) {
   .menu-toggle {
     display: block;
   }
