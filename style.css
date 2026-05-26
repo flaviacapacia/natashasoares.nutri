@@ -1,12 +1,12 @@
 @import url("https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700;800&family=Playfair+Display:wght@600;700&display=swap");
 
 :root {
-  --lilas: #8b5cf6;
-  --lilas-escuro: #6d28d9;
-  --verde: #22c55e;
-  --verde-agua: #34d399;
-  --texto: #1e1b35;
-  --fundo: #f5f6ff;
+  --lilas: #f07d24;
+  --lilas-escuro: #cf5f08;
+  --verde: #ffb36b;
+  --verde-agua: #ffe1c3;
+  --texto: #3c2412;
+  --fundo: #fff9f2;
   --branco: #ffffff;
   --font-body: "Manrope", "Segoe UI", sans-serif;
   --font-heading: "Playfair Display", Georgia, serif;
@@ -21,7 +21,7 @@
 body {
   font-family: var(--font-body);
   color: var(--texto);
-  background: radial-gradient(circle at top left, #e9ddff 0%, #f5f6ff 42%, #dcfff0 100%);
+  background: linear-gradient(170deg, #ffffff 0%, #fff7ee 58%, #fff1e2 100%);
   line-height: 1.5;
 }
 
@@ -45,7 +45,7 @@ a {
 
 .site-header {
   background: var(--branco);
-  border-bottom: 2px solid #c8b9ff;
+  border-bottom: 2px solid #ffd8b1;
   position: sticky;
   top: 0;
   z-index: 1000;
@@ -71,7 +71,7 @@ a {
   height: 44px;
   object-fit: cover;
   border-radius: 50%;
-  border: 2px solid #cdbdff;
+  border: 2px solid #ffd1a3;
 }
 
 .logo-mark {
@@ -102,7 +102,7 @@ a {
 
 .nav-menu a:hover,
 .nav-menu a.active {
-  border-color: var(--verde);
+  border-color: var(--lilas);
   color: var(--lilas-escuro);
 }
 
@@ -118,18 +118,33 @@ a {
 }
 
 .hero {
-  padding: 90px 0 70px;
-  text-align: center;
+  padding: 34px 0 54px;
 }
 
-.hero h1 {
+.hero-grid {
+  display: grid;
+  grid-template-columns: 1.05fr 1fr;
+  gap: 22px;
+  align-items: center;
+}
+
+.hero-image {
+  width: 100%;
+  aspect-ratio: 4 / 3;
+  object-fit: cover;
+  object-position: center top;
+  border-radius: 14px;
+  border: 1px solid #ffd8b1;
+  box-shadow: 0 10px 22px rgba(184, 90, 28, 0.15);
+}
+
+.hero-text h1 {
   font-size: clamp(1.7rem, 3vw, 2.6rem);
   margin-bottom: 12px;
 }
 
-.hero p {
-  max-width: 680px;
-  margin: 0 auto 24px;
+.hero-text p {
+  margin: 0 0 20px;
 }
 
 .btn-primary,
@@ -142,7 +157,7 @@ a {
 }
 
 .btn-primary {
-  background: linear-gradient(120deg, var(--lilas), var(--verde));
+  background: linear-gradient(120deg, #ef7b21, #ff9f43);
   color: var(--branco);
 }
 
@@ -151,12 +166,12 @@ a {
 }
 
 .btn-secondary {
-  background: #dff7ec;
-  color: #12533b;
+  background: #fff0df;
+  color: #8f4509;
 }
 
 .btn-secondary:hover {
-  background: #c8f1dd;
+  background: #ffe4c8;
 }
 
 .products {
@@ -192,8 +207,8 @@ a {
   background: var(--branco);
   border-radius: 14px;
   overflow: hidden;
-  box-shadow: 0 12px 28px rgba(73, 41, 122, 0.12);
-  border: 1px solid #ddd2ff;
+  box-shadow: 0 10px 22px rgba(184, 90, 28, 0.11);
+  border: 1px solid #ffd8b1;
   transition: transform 0.25s ease;
   display: flex;
   flex-direction: column;
@@ -206,7 +221,8 @@ a {
 
 .card img {
   width: 100%;
-  aspect-ratio: 3 / 4;
+  aspect-ratio: 4 / 3;
+  max-height: 230px;
   object-fit: cover;
   display: block;
 }
@@ -214,7 +230,8 @@ a {
 .card-blog img {
   aspect-ratio: 9 / 16;
   object-fit: contain;
-  background: #f1efff;
+  max-height: 300px;
+  background: #fff3e6;
 }
 
 .card h3,
@@ -269,9 +286,9 @@ a {
   max-width: 650px;
   background: var(--branco);
   border-radius: 14px;
-  border: 1px solid #ddd2ff;
+  border: 1px solid #ffd8b1;
   padding: 24px;
-  box-shadow: 0 10px 24px rgba(73, 41, 122, 0.12);
+  box-shadow: 0 10px 24px rgba(184, 90, 28, 0.12);
 }
 
 .contact-form label {
@@ -301,10 +318,10 @@ a {
 
 .form-card {
   background: #ffffff;
-  border: 1px solid #ddd2ff;
+  border: 1px solid #ffd8b1;
   border-radius: 14px;
   padding: 20px;
-  box-shadow: 0 10px 24px rgba(73, 41, 122, 0.12);
+  box-shadow: 0 10px 24px rgba(184, 90, 28, 0.12);
 }
 
 .contato-form {
@@ -315,7 +332,7 @@ a {
 .contato-form input,
 .contato-form textarea {
   width: 100%;
-  border: 1px solid #c8b9ff;
+  border: 1px solid #ffd2a8;
   border-radius: 10px;
   padding: 10px 12px;
   font: inherit;
@@ -328,8 +345,8 @@ a {
 
 .btn-whatsapp {
   display: inline-block;
-  background: linear-gradient(120deg, #22c55e, #34d399);
-  color: #062914;
+  background: linear-gradient(120deg, #ef7b21, #ffab4f);
+  color: #4c2608;
   font-weight: 800;
   padding: 11px 18px;
   border-radius: 10px;
@@ -347,8 +364,8 @@ a {
   height: 100%;
   object-fit: cover;
   border-radius: 14px;
-  border: 1px solid #ddd2ff;
-  box-shadow: 0 10px 24px rgba(73, 41, 122, 0.12);
+  border: 1px solid #ffd8b1;
+  box-shadow: 0 10px 24px rgba(184, 90, 28, 0.12);
 }
 
 .contact-layout {
@@ -375,17 +392,18 @@ a {
 
 .archive-item {
   background: #ffffff;
-  border: 1px solid #ddd2ff;
+  border: 1px solid #ffd8b1;
   border-radius: 12px;
   padding: 16px;
-  box-shadow: 0 8px 18px rgba(73, 41, 122, 0.08);
+  box-shadow: 0 8px 18px rgba(184, 90, 28, 0.09);
 }
 
 .archive-item img {
   width: 100%;
   aspect-ratio: 9 / 16;
   object-fit: contain;
-  background: #f1efff;
+  max-height: 300px;
+  background: #fff3e6;
   border-radius: 10px;
   margin-bottom: 12px;
 }
@@ -399,10 +417,11 @@ a {
 }
 
 .site-footer {
-  background: linear-gradient(120deg, #18162c 0%, #251f47 60%, #15352a 100%);
-  color: #e9e8ff;
+  background: linear-gradient(120deg, #ffffff 0%, #fff5e9 55%, #ffe7cc 100%);
+  color: #7a3e0f;
   margin-top: 40px;
   padding-top: 34px;
+  border-top: 2px solid #ffca94;
 }
 
 .footer-grid {
@@ -412,7 +431,7 @@ a {
 }
 
 .footer-grid h4 {
-  color: #7ef0be;
+  color: #cf5f08;
   margin-bottom: 10px;
 }
 
@@ -421,16 +440,16 @@ a {
 }
 
 .footer-grid a {
-  color: #7ef0be;
+  color: #cf5f08;
 }
 
 .footer-grid a:hover {
-  color: #d7ffef;
+  color: #a94700;
 }
 
 .copyright {
   text-align: center;
-  border-top: 1px solid rgba(225, 223, 255, 0.2);
+  border-top: 1px solid #ffd7b0;
   margin-top: 20px;
   padding: 16px 0;
   font-size: 0.9rem;
@@ -447,7 +466,7 @@ a {
     left: 0;
     right: 0;
     background: var(--branco);
-    border-bottom: 2px solid #c8b9ff;
+    border-bottom: 2px solid #ffd8b1;
     flex-direction: column;
     align-items: center;
     gap: 4px;
@@ -461,6 +480,14 @@ a {
 
   .about {
     grid-template-columns: 1fr;
+  }
+
+  .hero-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .hero-image {
+    max-height: 300px;
   }
 
   .grid-products {
