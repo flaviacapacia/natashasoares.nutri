@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Natasha Soares Nutricionista | Contato</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <header class="site-header">
+    <div class="container header-wrap">
+      <a href="index.html" class="logo" aria-label="Natasha Soares Nutricionista">
+        <img class="logo-photo" src="file:///C:/Users/Lenovo/Downloads/WhatsApp%20Image%202026-05-26%20at%2009.26.43%20%281%29.jpeg" alt="Logo Natasha Soares">
+        <span class="logo-text">Natasha Soares Nutricionista</span>
+      </a>
+      <button class="menu-toggle" aria-label="Abrir menu" aria-expanded="false">☰</button>
+      <nav class="nav-menu">
+        <a href="index.html">Início</a>
+        <a href="sobre.html">Sobre</a>
+        <a href="blog.html">Blog</a>
+        <a href="contato.html" class="active">Contato</a>
+      </nav>
+    </div>
+  </header>
+
+  <main class="container page-content">
+    <section>
+      <h1>Contato</h1>
+      <p>Preencha o formulário e entrarei em contato o mais breve possível.</p>
+      <div class="contact-layout">
+        <img src="file:///C:/Users/Lenovo/Downloads/WhatsApp%20Image%202026-05-26%20at%2009.26.39.jpeg" alt="Prato saudável Natasha Soares">
+        <form class="contact-form" action="#" method="post">
+          <label for="nome">Nome</label>
+          <input id="nome" name="nome" type="text" required>
+
+          <label for="email">Email</label>
+          <input id="email" name="email" type="email" required>
+
+          <label for="telefone">Telefone</label>
+          <input id="telefone" name="telefone" type="tel" required>
+
+          <label for="mensagem">Mensagem</label>
+          <textarea id="mensagem" name="mensagem" rows="5" required></textarea>
+
+          <button class="btn-primary" type="submit">Enviar mensagem</button>
+        </form>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="container footer-grid">
+      <div>
+        <h4>Natasha Soares Nutricionista</h4>
+        <p>Nutrição com foco em saúde, equilíbrio e qualidade de vida.</p>
+      </div>
+      <div>
+        <h4>Contato</h4>
+        <p>Telefone: (24) 99276-3286</p>
+        <p>Email: contato@natashasoaresnutri.com.br</p>
+        <p>Localização: Centro, Petrópolis - RJ</p>
+      </div>
+      <div>
+        <h4>Redes sociais</h4>
+        <p><a href="https://instagram.com" target="_blank" rel="noopener">Instagram</a></p>
+        <p><a href="https://facebook.com" target="_blank" rel="noopener">Facebook</a></p>
+        <p><a href="https://wa.me/5524992763286" target="_blank" rel="noopener">WhatsApp</a></p>
+      </div>
+    </div>
+    <p class="copyright">© 2026 Natasha Soares Nutricionista. Todos os direitos reservados.</p>
+  </footer>
+
+  <script>
+    const toggle = document.querySelector(".menu-toggle");
+    const menu = document.querySelector(".nav-menu");
+    toggle.addEventListener("click", () => {
+      const visible = menu.classList.toggle("open");
+      toggle.setAttribute("aria-expanded", String(visible));
+    });
+  </script>
+</body>
+</html>

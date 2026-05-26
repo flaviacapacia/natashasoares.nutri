@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Natasha Soares Nutricionista | Blog</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <header class="site-header">
+    <div class="container header-wrap">
+      <a href="index.html" class="logo" aria-label="Natasha Soares Nutricionista">
+        <img class="logo-photo" src="file:///C:/Users/Lenovo/Downloads/WhatsApp%20Image%202026-05-26%20at%2009.26.43%20%281%29.jpeg" alt="Logo Natasha Soares">
+        <span class="logo-text">Natasha Soares Nutricionista</span>
+      </a>
+      <button class="menu-toggle" aria-label="Abrir menu" aria-expanded="false">☰</button>
+      <nav class="nav-menu">
+        <a href="index.html">Início</a>
+        <a href="sobre.html">Sobre</a>
+        <a href="blog.html" class="active">Blog</a>
+        <a href="contato.html">Contato</a>
+      </nav>
+    </div>
+  </header>
+
+  <main class="container page-content">
+    <section>
+      <h1>Blog de Nutrição</h1>
+      <p>Dicas simples para melhorar sua alimentação e sua saúde.</p>
+      <p><a class="btn-primary" href="arquivo-blog.html">Ver arquivo completo do blog</a></p>
+      <div class="grid-blog">
+        <article class="card card-blog">
+          <img src="file:///C:/Users/Lenovo/Downloads/WhatsApp%20Image%202026-05-26%20at%2009.26.41.jpeg" alt="Artigo 1">
+          <h3>Como montar um prato equilibrado no almoço</h3>
+          <p>Aprenda uma estratégia prática para combinar proteínas, legumes e carboidratos sem complicação.</p>
+          <div class="actions">
+            <a class="link-article" href="arquivo-blog.html">Ler artigo</a>
+            <a class="btn-secondary" href="https://wa.me/5524992763286?text=Quero%20saber%20mais%20sobre%20prato%20equilibrado" target="_blank" rel="noopener">WhatsApp</a>
+          </div>
+        </article>
+        <article class="card card-blog">
+          <img src="file:///C:/Users/Lenovo/Downloads/WhatsApp%20Image%202026-05-26%20at%2009.26.40%20%281%29.jpeg" alt="Artigo 2">
+          <h3>5 lanches saudáveis para levar ao trabalho</h3>
+          <p>Ideias rápidas e nutritivas para manter energia durante o dia sem sair da dieta.</p>
+          <div class="actions">
+            <a class="link-article" href="arquivo-blog.html">Ler artigo</a>
+            <a class="btn-secondary" href="https://wa.me/5524992763286?text=Quero%20dicas%20de%20lanches%20saud%C3%A1veis" target="_blank" rel="noopener">WhatsApp</a>
+          </div>
+        </article>
+        <article class="card card-blog">
+          <img src="file:///C:/Users/Lenovo/Downloads/WhatsApp%20Image%202026-05-26%20at%2009.26.38.jpeg" alt="Artigo 3">
+          <h3>Hidratação: quanto de água você realmente precisa?</h3>
+          <p>Entenda como calcular seu consumo ideal e como criar o hábito de beber água ao longo do dia.</p>
+          <div class="actions">
+            <a class="link-article" href="arquivo-blog.html">Ler artigo</a>
+            <a class="btn-secondary" href="https://wa.me/5524992763286?text=Quero%20orienta%C3%A7%C3%A3o%20sobre%20hidrata%C3%A7%C3%A3o" target="_blank" rel="noopener">WhatsApp</a>
+          </div>
+        </article>
+        <article class="card card-blog">
+          <img src="file:///C:/Users/Lenovo/Downloads/WhatsApp%20Image%202026-05-26%20at%2009.26.43.jpeg" alt="Artigo 4">
+          <h3>Como evitar exageros no fim de semana</h3>
+          <p>Estratégias para manter consistência sem abrir mão de momentos sociais e refeições em família.</p>
+          <div class="actions">
+            <a class="link-article" href="arquivo-blog.html">Ler artigo</a>
+            <a class="btn-secondary" href="https://wa.me/5524992763286?text=Quero%20ajuda%20para%20evitar%20exageros%20no%20fim%20de%20semana" target="_blank" rel="noopener">WhatsApp</a>
+          </div>
+        </article>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="container footer-grid">
+      <div>
+        <h4>Natasha Soares Nutricionista</h4>
+        <p>Nutrição com foco em saúde, equilíbrio e qualidade de vida.</p>
+      </div>
+      <div>
+        <h4>Contato</h4>
+        <p>Telefone: (24) 99276-3286</p>
+        <p>Email: contato@natashasoaresnutri.com.br</p>
+        <p>Localização: Centro, Petrópolis - RJ</p>
+      </div>
+      <div>
+        <h4>Redes sociais</h4>
+        <p><a href="https://instagram.com" target="_blank" rel="noopener">Instagram</a></p>
+        <p><a href="https://facebook.com" target="_blank" rel="noopener">Facebook</a></p>
+        <p><a href="https://wa.me/5524992763286" target="_blank" rel="noopener">WhatsApp</a></p>
+      </div>
+    </div>
+    <p class="copyright">© 2026 Natasha Soares Nutricionista. Todos os direitos reservados.</p>
+  </footer>
+
+  <script>
+    const toggle = document.querySelector(".menu-toggle");
+    const menu = document.querySelector(".nav-menu");
+    toggle.addEventListener("click", () => {
+      const visible = menu.classList.toggle("open");
+      toggle.setAttribute("aria-expanded", String(visible));
+    });
+  </script>
+</body>
+</html>

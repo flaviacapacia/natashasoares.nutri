@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Natasha Soares Nutricionista | Arquivo do Blog</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <header class="site-header">
+    <div class="container header-wrap">
+      <a href="index.html" class="logo" aria-label="Natasha Soares Nutricionista">
+        <img class="logo-photo" src="file:///C:/Users/Lenovo/Downloads/WhatsApp%20Image%202026-05-26%20at%2009.26.43%20%281%29.jpeg" alt="Logo Natasha Soares">
+        <span class="logo-text">Natasha Soares Nutricionista</span>
+      </a>
+      <button class="menu-toggle" aria-label="Abrir menu" aria-expanded="false">☰</button>
+      <nav class="nav-menu">
+        <a href="index.html">Início</a>
+        <a href="sobre.html">Sobre</a>
+        <a href="blog.html" class="active">Blog</a>
+        <a href="contato.html">Contato</a>
+      </nav>
+    </div>
+  </header>
+
+  <main class="container page-content">
+    <section>
+      <h1>Arquivo do Blog</h1>
+      <p>Conteúdos, dicas e orientações da Natasha para uma rotina alimentar equilibrada.</p>
+      <div class="archive-list">
+        <article class="archive-item">
+          <h3>Como montar um prato equilibrado no almoço</h3>
+          <p>Guia simples para equilibrar proteínas, carboidratos e legumes no dia a dia.</p>
+          <a class="btn-secondary" href="https://wa.me/5524992763286?text=Quero%20receber%20mais%20conte%C3%BAdos%20do%20blog" target="_blank" rel="noopener">Receber no WhatsApp</a>
+        </article>
+        <article class="archive-item">
+          <h3>5 lanches saudáveis para levar ao trabalho</h3>
+          <p>Ideias práticas para evitar longos períodos em jejum e melhorar sua energia.</p>
+          <a class="btn-secondary" href="https://wa.me/5524992763286?text=Quero%20receber%20mais%20conte%C3%BAdos%20do%20blog" target="_blank" rel="noopener">Receber no WhatsApp</a>
+        </article>
+        <article class="archive-item">
+          <h3>Hidratação e hábitos que realmente funcionam</h3>
+          <p>Como criar uma rotina de hidratação sem esquecer de beber água.</p>
+          <a class="btn-secondary" href="https://wa.me/5524992763286?text=Quero%20receber%20mais%20conte%C3%BAdos%20do%20blog" target="_blank" rel="noopener">Receber no WhatsApp</a>
+        </article>
+        <article class="archive-item">
+          <h3>Estratégias para o fim de semana</h3>
+          <p>Dicas para manter o foco sem abrir mão de momentos especiais.</p>
+          <a class="btn-secondary" href="https://wa.me/5524992763286?text=Quero%20receber%20mais%20conte%C3%BAdos%20do%20blog" target="_blank" rel="noopener">Receber no WhatsApp</a>
+        </article>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="container footer-grid">
+      <div>
+        <h4>Natasha Soares Nutricionista</h4>
+        <p>Nutrição com foco em saúde, equilíbrio e qualidade de vida.</p>
+      </div>
+      <div>
+        <h4>Contato</h4>
+        <p>Telefone: (24) 99276-3286</p>
+        <p>Email: contato@natashasoaresnutri.com.br</p>
+        <p>Localização: Centro, Petrópolis - RJ</p>
+      </div>
+      <div>
+        <h4>Redes sociais</h4>
+        <p><a href="https://instagram.com" target="_blank" rel="noopener">Instagram</a></p>
+        <p><a href="https://facebook.com" target="_blank" rel="noopener">Facebook</a></p>
+        <p><a href="https://wa.me/5524992763286" target="_blank" rel="noopener">WhatsApp</a></p>
+      </div>
+    </div>
+    <p class="copyright">© 2026 Natasha Soares Nutricionista. Todos os direitos reservados.</p>
+  </footer>
+
+  <script>
+    const toggle = document.querySelector(".menu-toggle");
+    const menu = document.querySelector(".nav-menu");
+    toggle.addEventListener("click", () => {
+      const visible = menu.classList.toggle("open");
+      toggle.setAttribute("aria-expanded", String(visible));
+    });
+  </script>
+</body>
+</html>
