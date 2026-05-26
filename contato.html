@@ -4,13 +4,22 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Natasha Soares Nutricionista | Contato</title>
+  <meta name="description" content="Entre em contato com a nutricionista Natasha Soares em Petrópolis RJ. Atendimento online e presencial.">
+  <meta name="robots" content="index,follow">
+  <link rel="canonical" href="https://natashasoaresnutri.com.br/contato">
+  <meta property="og:type" content="website">
+  <meta property="og:title" content="Natasha Soares Nutricionista | Contato">
+  <meta property="og:description" content="Fale com Natasha Soares para agendar consulta e receber orientação nutricional personalizada.">
+  <meta property="og:image" content="img/contato-foto.jpeg">
+  <meta property="og:locale" content="pt_BR">
+  <meta name="twitter:card" content="summary_large_image">
   <link rel="stylesheet" href="style.css">
 </head>
 <body>
   <header class="site-header">
     <div class="container header-wrap">
       <a href="index.html" class="logo" aria-label="Natasha Soares Nutricionista">
-        <img class="logo-photo" src="file:///C:/Users/Lenovo/Downloads/WhatsApp%20Image%202026-05-26%20at%2009.26.43%20%281%29.jpeg" alt="Logo Natasha Soares">
+        <img class="logo-photo" src="img/logo-natasha.jpeg" alt="Logo Natasha Soares">
         <span class="logo-text">Natasha Soares Nutricionista</span>
       </a>
       <button class="menu-toggle" aria-label="Abrir menu" aria-expanded="false">☰</button>
@@ -23,29 +32,32 @@
     </div>
   </header>
 
-  <main class="container page-content">
-    <section>
-      <h1>Contato</h1>
-      <p>Preencha o formulário e entrarei em contato o mais breve possível.</p>
-      <div class="contact-layout">
-        <img src="file:///C:/Users/Lenovo/Downloads/WhatsApp%20Image%202026-05-26%20at%2009.26.39.jpeg" alt="Prato saudável Natasha Soares">
-        <form class="contact-form" action="#" method="post">
-          <label for="nome">Nome</label>
-          <input id="nome" name="nome" type="text" required>
+  <main class="contato-page container page-content">
+    <h1>Formulário de Contato</h1>
+    <div class="contato-layout">
+      <img class="contato-image" src="img/contato-foto.jpeg" alt="Imagem de contato Natasha Soares">
+      <section class="form-card">
+        <h2 style="margin:0 0 6px;">Envie uma mensagem</h2>
+        <p style="margin:0 0 14px;">Retornarei o mais breve possível.</p>
 
-          <label for="email">Email</label>
-          <input id="email" name="email" type="email" required>
-
-          <label for="telefone">Telefone</label>
-          <input id="telefone" name="telefone" type="tel" required>
-
-          <label for="mensagem">Mensagem</label>
-          <textarea id="mensagem" name="mensagem" rows="5" required></textarea>
-
-          <button class="btn-primary" type="submit">Enviar mensagem</button>
+        <form id="contatoForm"
+              class="contato-form"
+              action="https://formulario-site-1028879773485.southamerica-east1.run.app/contato"
+              method="POST">
+          <input type="text" name="nome" placeholder="Seu nome" required>
+          <input type="tel" name="telefone" placeholder="Seu telefone" required>
+          <input type="email" name="email" placeholder="Seu email" required>
+          <textarea name="mensagem" placeholder="Sua mensagem" required></textarea>
+          <button id="button" type="submit" class="btn-primary">Enviar</button>
         </form>
-      </div>
-    </section>
+      </section>
+    </div>
+
+    <div style="text-align:center; margin-top:18px;">
+      <a class="btn-whatsapp"
+         href="https://wa.me/5524992763286?text=Ol%C3%A1%20Natasha%2C%20gostaria%20de%20informa%C3%A7%C3%B5es."
+         target="_blank" rel="noopener noreferrer">Falar no WhatsApp</a>
+    </div>
   </main>
 
   <footer class="site-footer">
@@ -71,11 +83,77 @@
   </footer>
 
   <script>
+    const form = document.getElementById("contatoForm");
+    const button = document.getElementById("button");
+    const msgDiv = document.createElement("div");
+    msgDiv.id = "form-msg";
+    msgDiv.style.margin = "10px 0 0";
+    form.appendChild(msgDiv);
+
+    form.addEventListener("submit", function (e) {
+      e.preventDefault();
+      button.textContent = "Enviando...";
+      button.disabled = true;
+      msgDiv.textContent = "";
+
+      const formData = new FormData(this);
+      const data = {
+        nome: formData.get("nome"),
+        telefone: formData.get("telefone"),
+        email: formData.get("email"),
+        mensagem: formData.get("mensagem"),
+        data: new Date().toLocaleString("pt-BR")
+      };
+
+      fetch("https://formulario-site-1028879773485.southamerica-east1.run.app/contato", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify(data)
+      })
+        .then((response) => response.text())
+        .then(() => {
+          msgDiv.textContent = "Mensagem enviada com sucesso!";
+          msgDiv.style.color = "green";
+          button.textContent = "Enviar";
+          button.disabled = false;
+          form.reset();
+        })
+        .catch(() => {
+          msgDiv.textContent = "Erro ao enviar. Tente novamente.";
+          msgDiv.style.color = "red";
+          button.textContent = "Enviar";
+          button.disabled = false;
+        });
+    });
+
     const toggle = document.querySelector(".menu-toggle");
     const menu = document.querySelector(".nav-menu");
     toggle.addEventListener("click", () => {
       const visible = menu.classList.toggle("open");
       toggle.setAttribute("aria-expanded", String(visible));
+    });
+
+    document.querySelectorAll("img").forEach((img) => {
+      img.dataset.fallbackStep = "0";
+      img.addEventListener("error", function onImgError() {
+        const src = this.getAttribute("src") || "";
+        const step = Number(this.dataset.fallbackStep || "0");
+        const extList = [".jpeg", ".jpg", ".png", ".webp"];
+        const match = src.match(/\.(jpeg|jpg|png|webp)$/i);
+        if (!match) return;
+        const currentExt = `.${match[1].toLowerCase()}`;
+        const extIndex = extList.indexOf(currentExt);
+        if (step === 0 && extIndex >= 0 && extIndex < extList.length - 1) {
+          this.dataset.fallbackStep = "1";
+          this.setAttribute("src", src.replace(/\.(jpeg|jpg|png|webp)$/i, extList[extIndex + 1]));
+          return;
+        }
+        if (step <= 1 && src.startsWith("img/")) {
+          this.dataset.fallbackStep = "2";
+          this.setAttribute("src", src.replace(/^img\//, ""));
+          return;
+        }
+      });
     });
   </script>
 </body>

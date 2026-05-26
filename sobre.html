@@ -4,13 +4,22 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Natasha Soares Nutricionista | Sobre</title>
+  <meta name="description" content="Conheça Natasha Soares, nutricionista em Petrópolis RJ, com atendimento humanizado e foco em hábitos saudáveis.">
+  <meta name="robots" content="index,follow">
+  <link rel="canonical" href="https://natashasoaresnutri.com.br/sobre">
+  <meta property="og:type" content="website">
+  <meta property="og:title" content="Natasha Soares Nutricionista | Sobre">
+  <meta property="og:description" content="Saiba mais sobre a trajetória e o método de atendimento da nutricionista Natasha Soares.">
+  <meta property="og:image" content="img/sobre-natasha.jpeg">
+  <meta property="og:locale" content="pt_BR">
+  <meta name="twitter:card" content="summary_large_image">
   <link rel="stylesheet" href="style.css">
 </head>
 <body>
   <header class="site-header">
     <div class="container header-wrap">
       <a href="index.html" class="logo" aria-label="Natasha Soares Nutricionista">
-        <img class="logo-photo" src="file:///C:/Users/Lenovo/Downloads/WhatsApp%20Image%202026-05-26%20at%2009.26.43%20%281%29.jpeg" alt="Logo Natasha Soares">
+        <img class="logo-photo" src="img/logo-natasha.jpeg" alt="Logo Natasha Soares">
         <span class="logo-text">Natasha Soares Nutricionista</span>
       </a>
       <button class="menu-toggle" aria-label="Abrir menu" aria-expanded="false">☰</button>
@@ -25,7 +34,7 @@
 
   <main class="container page-content">
     <section class="about">
-      <img src="file:///C:/Users/Lenovo/Downloads/WhatsApp%20Image%202026-05-26%20at%2009.26.44.jpeg" alt="Natasha Soares Nutricionista">
+      <img src="img/sobre-natasha.jpeg" alt="Natasha Soares Nutricionista">
       <div>
         <h1>Sobre Natasha Soares</h1>
         <p>Sou nutricionista e atuo com atendimento personalizado para pessoas que querem emagrecer, ganhar saúde e melhorar a relação com a alimentação no dia a dia.</p>
@@ -64,6 +73,29 @@
     toggle.addEventListener("click", () => {
       const visible = menu.classList.toggle("open");
       toggle.setAttribute("aria-expanded", String(visible));
+    });
+
+    document.querySelectorAll("img").forEach((img) => {
+      img.dataset.fallbackStep = "0";
+      img.addEventListener("error", function onImgError() {
+        const src = this.getAttribute("src") || "";
+        const step = Number(this.dataset.fallbackStep || "0");
+        const extList = [".jpeg", ".jpg", ".png", ".webp"];
+        const match = src.match(/\.(jpeg|jpg|png|webp)$/i);
+        if (!match) return;
+        const currentExt = `.${match[1].toLowerCase()}`;
+        const extIndex = extList.indexOf(currentExt);
+        if (step === 0 && extIndex >= 0 && extIndex < extList.length - 1) {
+          this.dataset.fallbackStep = "1";
+          this.setAttribute("src", src.replace(/\.(jpeg|jpg|png|webp)$/i, extList[extIndex + 1]));
+          return;
+        }
+        if (step <= 1 && src.startsWith("img/")) {
+          this.dataset.fallbackStep = "2";
+          this.setAttribute("src", src.replace(/^img\//, ""));
+          return;
+        }
+      });
     });
   </script>
 </body>

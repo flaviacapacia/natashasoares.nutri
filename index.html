@@ -4,13 +4,22 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Natasha Soares Nutricionista | Início</title>
+  <meta name="description" content="Nutricionista Natasha Soares em Petrópolis RJ. Planos alimentares, acompanhamento nutricional e atendimento personalizado.">
+  <meta name="robots" content="index,follow">
+  <link rel="canonical" href="https://natashasoaresnutri.com.br/">
+  <meta property="og:type" content="website">
+  <meta property="og:title" content="Natasha Soares Nutricionista | Início">
+  <meta property="og:description" content="Atendimento nutricional personalizado com foco em saúde e resultados sustentáveis.">
+  <meta property="og:image" content="img/logo-natasha.jpeg">
+  <meta property="og:locale" content="pt_BR">
+  <meta name="twitter:card" content="summary_large_image">
   <link rel="stylesheet" href="style.css">
 </head>
 <body>
   <header class="site-header">
     <div class="container header-wrap">
       <a href="index.html" class="logo" aria-label="Natasha Soares Nutricionista">
-        <img class="logo-photo" src="file:///C:/Users/Lenovo/Downloads/WhatsApp%20Image%202026-05-26%20at%2009.26.43%20%281%29.jpeg" alt="Logo Natasha Soares">
+        <img class="logo-photo" src="img/logo-natasha.jpeg" alt="Logo Natasha Soares">
         <span class="logo-text">Natasha Soares Nutricionista</span>
       </a>
       <button class="menu-toggle" aria-label="Abrir menu" aria-expanded="false">☰</button>
@@ -37,35 +46,35 @@
       <p>Escolha um produto e fale comigo no WhatsApp para receber mais detalhes.</p>
       <div class="grid-products">
         <a href="https://wa.me/5524992763286?text=Tenho%20interesse%20no%20produto%201" target="_blank" rel="noopener" class="card">
-          <img src="file:///C:/Users/Lenovo/Downloads/WhatsApp%20Image%202026-05-26%20at%2009.26.45.jpeg" alt="Produto 1">
+          <img src="img/produto-01.jpeg" alt="Produto 1">
           <h3>E-book Reeducação Alimentar</h3>
         </a>
         <a href="https://wa.me/5524992763286?text=Tenho%20interesse%20no%20produto%202" target="_blank" rel="noopener" class="card">
-          <img src="file:///C:/Users/Lenovo/Downloads/WhatsApp%20Image%202026-05-26%20at%2009.26.43.jpeg" alt="Produto 2">
+          <img src="img/produto-02.jpeg" alt="Produto 2">
           <h3>Guia de Lanches Saudáveis</h3>
         </a>
         <a href="https://wa.me/5524992763286?text=Tenho%20interesse%20no%20produto%203" target="_blank" rel="noopener" class="card">
-          <img src="file:///C:/Users/Lenovo/Downloads/WhatsApp%20Image%202026-05-26%20at%2009.26.42.jpeg" alt="Produto 3">
+          <img src="img/produto-03.jpeg" alt="Produto 3">
           <h3>Plano 21 Dias de Hábitos</h3>
         </a>
         <a href="https://wa.me/5524992763286?text=Tenho%20interesse%20no%20produto%204" target="_blank" rel="noopener" class="card">
-          <img src="file:///C:/Users/Lenovo/Downloads/WhatsApp%20Image%202026-05-26%20at%2009.26.40%20%282%29.jpeg" alt="Produto 4">
+          <img src="img/produto-04.jpeg" alt="Produto 4">
           <h3>Consulta Nutricional Online</h3>
         </a>
         <a href="https://wa.me/5524992763286?text=Tenho%20interesse%20no%20produto%205" target="_blank" rel="noopener" class="card">
-          <img src="file:///C:/Users/Lenovo/Downloads/WhatsApp%20Image%202026-05-26%20at%2009.26.40.jpeg" alt="Produto 5">
+          <img src="img/produto-05.jpeg" alt="Produto 5">
           <h3>Cardápio Semanal Personalizado</h3>
         </a>
         <a href="https://wa.me/5524992763286?text=Tenho%20interesse%20no%20produto%206" target="_blank" rel="noopener" class="card">
-          <img src="file:///C:/Users/Lenovo/Downloads/WhatsApp%20Image%202026-05-26%20at%2009.26.39%20%282%29.jpeg" alt="Produto 6">
+          <img src="img/produto-06.jpeg" alt="Produto 6">
           <h3>Mentoria para Emagrecimento</h3>
         </a>
         <a href="https://wa.me/5524992763286?text=Tenho%20interesse%20no%20produto%207" target="_blank" rel="noopener" class="card">
-          <img src="file:///C:/Users/Lenovo/Downloads/WhatsApp%20Image%202026-05-26%20at%2009.26.39%20%281%29.jpeg" alt="Produto 7">
+          <img src="img/produto-07.jpeg" alt="Produto 7">
           <h3>Programa Nutrição Esportiva</h3>
         </a>
         <a href="https://wa.me/5524992763286?text=Tenho%20interesse%20no%20produto%208" target="_blank" rel="noopener" class="card">
-          <img src="file:///C:/Users/Lenovo/Downloads/WhatsApp%20Image%202026-05-26%20at%2009.26.39.jpeg" alt="Produto 8">
+          <img src="img/produto-08.jpeg" alt="Produto 8">
           <h3>Acompanhamento Mensal Premium</h3>
         </a>
       </div>
@@ -100,6 +109,29 @@
     toggle.addEventListener("click", () => {
       const visible = menu.classList.toggle("open");
       toggle.setAttribute("aria-expanded", String(visible));
+    });
+
+    document.querySelectorAll("img").forEach((img) => {
+      img.dataset.fallbackStep = "0";
+      img.addEventListener("error", function onImgError() {
+        const src = this.getAttribute("src") || "";
+        const step = Number(this.dataset.fallbackStep || "0");
+        const extList = [".jpeg", ".jpg", ".png", ".webp"];
+        const match = src.match(/\.(jpeg|jpg|png|webp)$/i);
+        if (!match) return;
+        const currentExt = `.${match[1].toLowerCase()}`;
+        const extIndex = extList.indexOf(currentExt);
+        if (step === 0 && extIndex >= 0 && extIndex < extList.length - 1) {
+          this.dataset.fallbackStep = "1";
+          this.setAttribute("src", src.replace(/\.(jpeg|jpg|png|webp)$/i, extList[extIndex + 1]));
+          return;
+        }
+        if (step <= 1 && src.startsWith("img/")) {
+          this.dataset.fallbackStep = "2";
+          this.setAttribute("src", src.replace(/^img\//, ""));
+          return;
+        }
+      });
     });
   </script>
 </body>
