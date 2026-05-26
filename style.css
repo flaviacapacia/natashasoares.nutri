@@ -1,9 +1,10 @@
 :root {
-  --laranja: #e97821;
-  --mel: #f4c15d;
-  --mel-claro: #ffe7b8;
-  --texto: #3b250f;
-  --fundo: #fff8ee;
+  --lilas: #8b5cf6;
+  --lilas-escuro: #6d28d9;
+  --verde: #22c55e;
+  --verde-agua: #34d399;
+  --texto: #1e1b35;
+  --fundo: #f5f6ff;
   --branco: #ffffff;
 }
 
@@ -16,7 +17,7 @@
 body {
   font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
   color: var(--texto);
-  background: linear-gradient(160deg, #fff8ee 0%, #fff1dc 50%, #ffe7b8 100%);
+  background: radial-gradient(circle at top left, #e9ddff 0%, #f5f6ff 42%, #dcfff0 100%);
   line-height: 1.5;
 }
 
@@ -32,7 +33,7 @@ a {
 
 .site-header {
   background: var(--branco);
-  border-bottom: 2px solid var(--mel);
+  border-bottom: 2px solid #c8b9ff;
   position: sticky;
   top: 0;
   z-index: 1000;
@@ -58,14 +59,14 @@ a {
   height: 44px;
   object-fit: cover;
   border-radius: 50%;
-  border: 2px solid var(--mel);
+  border: 2px solid #cdbdff;
 }
 
 .logo-mark {
   width: 40px;
   height: 40px;
   border-radius: 50%;
-  background: linear-gradient(135deg, var(--laranja), var(--mel));
+  background: linear-gradient(135deg, var(--lilas), var(--verde));
   color: var(--branco);
   display: grid;
   place-items: center;
@@ -89,15 +90,15 @@ a {
 
 .nav-menu a:hover,
 .nav-menu a.active {
-  border-color: var(--laranja);
-  color: var(--laranja);
+  border-color: var(--verde);
+  color: var(--lilas-escuro);
 }
 
 .menu-toggle {
   display: none;
-  border: 1px solid var(--laranja);
+  border: 1px solid var(--lilas);
   background: var(--branco);
-  color: var(--laranja);
+  color: var(--lilas);
   padding: 8px 10px;
   border-radius: 8px;
   font-size: 1.1rem;
@@ -128,21 +129,21 @@ a {
 }
 
 .btn-primary {
-  background: var(--laranja);
+  background: linear-gradient(120deg, var(--lilas), var(--verde));
   color: var(--branco);
 }
 
 .btn-primary:hover {
-  background: #d36716;
+  filter: brightness(0.95);
 }
 
 .btn-secondary {
-  background: var(--mel);
-  color: #4a2b09;
+  background: #dff7ec;
+  color: #12533b;
 }
 
 .btn-secondary:hover {
-  background: #edb84a;
+  background: #c8f1dd;
 }
 
 .products {
@@ -163,16 +164,27 @@ a {
 .grid-blog {
   display: grid;
   gap: 18px;
-  grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+  align-items: stretch;
+}
+
+.grid-products {
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+}
+
+.grid-blog {
+  grid-template-columns: repeat(2, minmax(0, 1fr));
 }
 
 .card {
   background: var(--branco);
   border-radius: 14px;
   overflow: hidden;
-  box-shadow: 0 10px 25px rgba(106, 62, 17, 0.12);
-  border: 1px solid #f6d7a1;
+  box-shadow: 0 12px 28px rgba(73, 41, 122, 0.12);
+  border: 1px solid #ddd2ff;
   transition: transform 0.25s ease;
+  display: flex;
+  flex-direction: column;
+  height: 100%;
 }
 
 .card:hover {
@@ -181,9 +193,15 @@ a {
 
 .card img {
   width: 100%;
-  height: 185px;
+  aspect-ratio: 3 / 4;
   object-fit: cover;
   display: block;
+}
+
+.card-blog img {
+  aspect-ratio: 9 / 16;
+  object-fit: contain;
+  background: #f1efff;
 }
 
 .card h3,
@@ -194,10 +212,12 @@ a {
 .card h3 {
   font-size: 1.05rem;
   margin: 12px 0 10px;
+  min-height: 3.2em;
 }
 
 .card p {
   margin-bottom: 14px;
+  flex-grow: 1;
 }
 
 .card-blog .actions {
@@ -206,11 +226,13 @@ a {
   align-items: center;
   gap: 10px;
   padding: 0 14px 16px;
+  margin-top: auto;
+  flex-wrap: wrap;
 }
 
 .link-article {
   font-weight: 700;
-  color: var(--laranja);
+  color: var(--lilas-escuro);
 }
 
 .page-content {
@@ -227,16 +249,16 @@ a {
 .about img {
   width: 100%;
   border-radius: 16px;
-  box-shadow: 0 12px 30px rgba(106, 62, 17, 0.14);
+  box-shadow: 0 12px 30px rgba(73, 41, 122, 0.16);
 }
 
 .contact-form {
   max-width: 650px;
   background: var(--branco);
   border-radius: 14px;
-  border: 1px solid #f4d19a;
+  border: 1px solid #ddd2ff;
   padding: 24px;
-  box-shadow: 0 10px 24px rgba(106, 62, 17, 0.1);
+  box-shadow: 0 10px 24px rgba(73, 41, 122, 0.12);
 }
 
 .contact-form label {
@@ -248,7 +270,7 @@ a {
 .contact-form input,
 .contact-form textarea {
   width: 100%;
-  border: 1px solid #ebc98f;
+  border: 1px solid #c8b9ff;
   border-radius: 10px;
   padding: 10px 12px;
   font: inherit;
@@ -260,9 +282,46 @@ a {
   cursor: pointer;
 }
 
+.contact-layout {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 20px;
+  align-items: stretch;
+}
+
+.contact-layout img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  border-radius: 14px;
+  border: 1px solid #ddd2ff;
+  box-shadow: 0 10px 24px rgba(73, 41, 122, 0.12);
+}
+
+.archive-list {
+  display: grid;
+  gap: 14px;
+}
+
+.archive-item {
+  background: #ffffff;
+  border: 1px solid #ddd2ff;
+  border-radius: 12px;
+  padding: 16px;
+  box-shadow: 0 8px 18px rgba(73, 41, 122, 0.08);
+}
+
+.archive-item h3 {
+  margin-bottom: 8px;
+}
+
+.archive-item p {
+  margin-bottom: 12px;
+}
+
 .site-footer {
-  background: #3f2812;
-  color: #ffe9c2;
+  background: linear-gradient(120deg, #18162c 0%, #251f47 60%, #15352a 100%);
+  color: #e9e8ff;
   margin-top: 40px;
   padding-top: 34px;
 }
@@ -274,7 +333,7 @@ a {
 }
 
 .footer-grid h4 {
-  color: #ffd27a;
+  color: #7ef0be;
   margin-bottom: 10px;
 }
 
@@ -283,16 +342,16 @@ a {
 }
 
 .footer-grid a {
-  color: #ffd27a;
+  color: #7ef0be;
 }
 
 .footer-grid a:hover {
-  color: #fff3d9;
+  color: #d7ffef;
 }
 
 .copyright {
   text-align: center;
-  border-top: 1px solid rgba(255, 237, 205, 0.2);
+  border-top: 1px solid rgba(225, 223, 255, 0.2);
   margin-top: 20px;
   padding: 16px 0;
   font-size: 0.9rem;
@@ -309,7 +368,7 @@ a {
     left: 0;
     right: 0;
     background: var(--branco);
-    border-bottom: 2px solid var(--mel);
+    border-bottom: 2px solid #c8b9ff;
     flex-direction: column;
     align-items: center;
     gap: 4px;
@@ -322,6 +381,30 @@ a {
   }
 
   .about {
+    grid-template-columns: 1fr;
+  }
+
+  .grid-products {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
+  .grid-blog {
+    grid-template-columns: 1fr;
+  }
+
+  .contact-layout {
+    grid-template-columns: 1fr;
+  }
+}
+
+@media (max-width: 1140px) {
+  .grid-products {
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+  }
+}
+
+@media (max-width: 600px) {
+  .grid-products {
     grid-template-columns: 1fr;
   }
 }
